@@ -1,0 +1,858 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0427.1803                               -->
+<workbook original-version='18.1' source-build='2020.1.3 (20201.20.0427.1803)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='NHL_game_log_all' inline='true' name='federated.0g5hxef09wg1bi1126cae1nmv00y' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='NHL_game_log_all' name='textscan.0u0nmi51vun57a17xfswf0n6fkum'>
+            <connection class='textscan' directory='C:/Users/aronf/Documents/Projects/NHL Player Stats' filename='NHL_game_log_all.csv' password='' port='0' server='' />
+          </named-connection>
+          <named-connection caption='NHL_game_log_all_cleaned' name='textscan.0wi8ioy07lq48e1fj9res0su806r'>
+            <connection class='textscan' directory='C:/Users/aronf/Documents/Projects/NHL Player Stats' filename='NHL_game_log_all_cleaned.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0wi8ioy07lq48e1fj9res0su806r' name='NHL_game_log_all_cleaned.csv' table='[NHL_game_log_all_cleaned#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+            <column datatype='integer' name='Rk' ordinal='0' />
+            <column datatype='date' name='Date' ordinal='1' />
+            <column datatype='integer' name='G' ordinal='2' />
+            <column datatype='integer' name='Age' ordinal='3' />
+            <column datatype='string' name='Tm' ordinal='4' />
+            <column datatype='string' name='Location' ordinal='5' />
+            <column datatype='string' name='Opp' ordinal='6' />
+            <column datatype='string' name='Result' ordinal='7' />
+            <column datatype='integer' name='Goals' ordinal='8' />
+            <column datatype='integer' name='Assists' ordinal='9' />
+            <column datatype='integer' name='PTS' ordinal='10' />
+            <column datatype='integer' name='PIM' ordinal='11' />
+            <column datatype='string' name='Player' ordinal='12' />
+            <column datatype='string' date-parse-format='ddMM-yyyy|#|#|MMddHH-yyyy' name='Season' ordinal='13' />
+            <column datatype='integer' name='Player_Season_Num' ordinal='14' />
+            <column datatype='integer' name='Career_Game_Num' ordinal='15' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rk</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rk]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Rk</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>G</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[G]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>G</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tm</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Tm]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Tm</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Opp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Opp]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Opp</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Result</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Result]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Result</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Goals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Goals]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Goals</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Assists</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Assists]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Assists</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PTS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PTS]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>PTS</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PIM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PIM]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>PIM</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Player]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Player</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Season</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Season]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Season</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Player_Season_Num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Player_Season_Num]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Player_Season_Num</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Career_Game_Num</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Career_Game_Num]</local-name>
+            <parent-name>[NHL_game_log_all_cleaned.csv]</parent-name>
+            <remote-alias>Career_Game_Num</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='None' caption='PTS (bin)' datatype='integer' name='[PTS (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[PTS]' peg='0' size='1' />
+      </column>
+      <column datatype='integer' name='[PTS]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Player_Season_Num]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Tm]' role='dimension' type='nominal' />
+      <column-instance column='[Tm]' derivation='None' name='[none:Tm:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/aronf/Documents/Projects/NHL Player Stats/NHL_player_profiles.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='05/12/2020 11:21:03 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='NHL_game_log_all' increment-value='%null%' refresh-type='create' rows-inserted='1395913' timestamp-start='2020-05-12 23:21:03.151' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Rk</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Rk]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Rk</remote-alias>
+              <ordinal>0</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>83</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>32833</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>G</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[G]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>G</remote-alias>
+              <ordinal>2</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>83</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>3</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Tm</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Tm]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Tm</remote-alias>
+              <ordinal>4</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>38</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Location]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Location</remote-alias>
+              <ordinal>5</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Opp</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Opp]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Opp</remote-alias>
+              <ordinal>6</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>37</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Result</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Result]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Result</remote-alias>
+              <ordinal>7</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Goals</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Goals]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Goals</remote-alias>
+              <ordinal>8</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Assists</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Assists]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Assists</remote-alias>
+              <ordinal>9</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PTS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PTS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PTS</remote-alias>
+              <ordinal>10</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PIM</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PIM]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PIM</remote-alias>
+              <ordinal>11</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>45</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Player</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Player]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Player</remote-alias>
+              <ordinal>12</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12099</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Season</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Season]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Season</remote-alias>
+              <ordinal>13</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>40</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Player_Season_Num</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Player_Season_Num]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Player_Season_Num</remote-alias>
+              <ordinal>14</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Career_Game_Num</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Career_Game_Num]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Career_Game_Num</remote-alias>
+              <ordinal>15</ordinal>
+              <family>NHL_game_log_all_cleaned.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3575</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.500763' measure-ordering='alphabetic' measure-percentage='0.499237' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Tm:nk]' type='palette'>
+            <map to='#002868'>
+              <bucket>&quot;TBL&quot;</bucket>
+            </map>
+            <map to='#002d62'>
+              <bucket>&quot;BUF&quot;</bucket>
+            </map>
+            <map to='#002e62'>
+              <bucket>&quot;WPG&quot;</bucket>
+            </map>
+            <map to='#003876'>
+              <bucket>&quot;TOR&quot;</bucket>
+            </map>
+            <map to='#0038a8'>
+              <bucket>&quot;NYR&quot;</bucket>
+            </map>
+            <map to='#005eb8'>
+              <bucket>&quot;QUE&quot;</bucket>
+            </map>
+            <map to='#006341'>
+              <bucket>&quot;DAL&quot;</bucket>
+            </map>
+            <map to='#006e7f'>
+              <bucket>&quot;SJS&quot;</bucket>
+            </map>
+            <map to='#00843d'>
+              <bucket>&quot;VAN&quot;</bucket>
+            </map>
+            <map to='#009639'>
+              <bucket>&quot;MNS&quot;</bucket>
+            </map>
+            <map to='#01265b'>
+              <bucket>&quot;CBJ&quot;</bucket>
+            </map>
+            <map to='#0447a0'>
+              <bucket>&quot;STL&quot;</bucket>
+            </map>
+            <map to='#0e7b3e'>
+              <bucket>&quot;HAR&quot;</bucket>
+            </map>
+            <map to='#111111'>
+              <bucket>&quot;LAK&quot;</bucket>
+            </map>
+            <map to='#154734'>
+              <bucket>&quot;MIN&quot;</bucket>
+            </map>
+            <map to='#5c88da'>
+              <bucket>&quot;ATL&quot;</bucket>
+            </map>
+            <map to='#89222f'>
+              <bucket>&quot;ARI&quot;</bucket>
+            </map>
+            <map to='#8b2942'>
+              <bucket>&quot;COL&quot;</bucket>
+            </map>
+            <map to='#af1e2d'>
+              <bucket>&quot;MTL&quot;</bucket>
+            </map>
+            <map to='#b4975a'>
+              <bucket>&quot;VEG&quot;</bucket>
+            </map>
+            <map to='#c52032'>
+              <bucket>&quot;OTT&quot;</bucket>
+            </map>
+            <map to='#c8102e'>
+              <bucket>&quot;DET&quot;</bucket>
+            </map>
+            <map to='#c8102e'>
+              <bucket>&quot;FLA&quot;</bucket>
+            </map>
+            <map to='#c8102e'>
+              <bucket>&quot;WSH&quot;</bucket>
+            </map>
+            <map to='#ce1126'>
+              <bucket>&quot;NJD&quot;</bucket>
+            </map>
+            <map to='#d1001b'>
+              <bucket>&quot;CHI&quot;</bucket>
+            </map>
+            <map to='#d42604'>
+              <bucket>&quot;CGY&quot;</bucket>
+            </map>
+            <map to='#e13a3e'>
+              <bucket>&quot;CAR&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CLR&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ATF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;WIN&quot;</bucket>
+            </map>
+            <map to='#f47d30'>
+              <bucket>&quot;NYI&quot;</bucket>
+            </map>
+            <map to='#f74902'>
+              <bucket>&quot;PHI&quot;</bucket>
+            </map>
+            <map to='#fc4c02'>
+              <bucket>&quot;ANA&quot;</bucket>
+            </map>
+            <map to='#fdb927'>
+              <bucket>&quot;BOS&quot;</bucket>
+            </map>
+            <map to='#ff4c00'>
+              <bucket>&quot;EDM&quot;</bucket>
+            </map>
+            <map to='#ffb81c'>
+              <bucket>&quot;NSH&quot;</bucket>
+            </map>
+            <map to='#ffc80c'>
+              <bucket>&quot;PIT&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='NHL_game_log_all' name='federated.0g5hxef09wg1bi1126cae1nmv00y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0g5hxef09wg1bi1126cae1nmv00y'>
+            <column datatype='integer' name='[Career_Game_Num]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Opp]' role='dimension' type='nominal' />
+            <column aggregation='None' caption='PTS (bin)' datatype='integer' name='[PTS (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[PTS]' peg='0' size='1' />
+            </column>
+            <column datatype='integer' name='[PTS]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Player]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Result]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Season]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Tm]' role='dimension' type='nominal' />
+            <column-instance column='[PTS]' derivation='Count' name='[cnt:PTS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Career_Game_Num]' derivation='None' name='[none:Career_Game_Num:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Opp]' derivation='None' name='[none:Opp:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PTS (bin)]' derivation='None' name='[none:PTS (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Player]' derivation='None' name='[none:Player:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Result]' derivation='None' name='[none:Result:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Season]' derivation='None' name='[none:Season:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Tm]' derivation='None' name='[none:Tm:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PTS]' derivation='Count' name='[pcto:cnt:PTS:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[PTS]' derivation='Sum' name='[sum:PTS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Career_Game_Num:qk]' included-values='all' />
+          <filter class='categorical' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Opp:nk]'>
+            <groupfilter function='member' level='[none:Opp:nk]' member='&quot;CGY&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]'>
+            <groupfilter function='member' level='[none:Player:nk]' member='&quot;Mats Sundin&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Result:nk]'>
+            <groupfilter function='level-members' level='[none:Result:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Season:nk]'>
+            <groupfilter function='level-members' level='[none:Season:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]'>
+            <groupfilter function='level-members' level='[none:Tm:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]</column>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Opp:nk]</column>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]</column>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Result:nk]</column>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Season:nk]</column>
+            <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Career_Game_Num:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]' />
+              <lod column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]' />
+              <lod column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[sum:PTS:qk]' />
+              <lod column='[federated.0g5hxef09wg1bi1126cae1nmv00y].[cnt:PTS:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Player:&#9;</run>
+                <run bold='true'>&lt;[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Tm:&#9;</run>
+                <run bold='true'>&lt;[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>% of Total:&#9;</run>
+                <run bold='true'>&lt;[federated.0g5hxef09wg1bi1126cae1nmv00y].[pcto:cnt:PTS:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>PTS:&#9;</run>
+                <run bold='true'>&lt;[federated.0g5hxef09wg1bi1126cae1nmv00y].[sum:PTS:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0g5hxef09wg1bi1126cae1nmv00y].[pcto:cnt:PTS:qk]</rows>
+        <cols>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:PTS (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.0g5hxef09wg1bi1126cae1nmv00y].[PTS (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{D7344FFB-5405-43AD-9200-43E065714329}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Career_Game_Num:qk]' show-domain='false' show-null-ctrls='false' type='filter' values='relevant' />
+            <card mode='slider' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Season:nk]' type='filter' values='relevant' />
+            <card mode='dropdown' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]' type='filter' values='relevant' />
+            <card mode='dropdown' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Opp:nk]' type='filter' values='relevant' />
+            <card mode='dropdown' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]' type='filter' values='relevant' />
+            <card mode='dropdown' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Result:nk]' type='filter' values='relevant' />
+            <card pane-specification-id='0' param='[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[:Measure Names]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[cnt:PTS:ok]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Career_Game_Num:ok]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Opp:nk]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Player:nk]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Result:nk]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Season:nk]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[none:Tm:nk]</field>
+            <field>[federated.0g5hxef09wg1bi1126cae1nmv00y].[sum:PTS:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DBAEC308-6C42-4E90-9FF2-0E2E062FA7D8}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      QmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
